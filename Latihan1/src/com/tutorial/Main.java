@@ -19,7 +19,7 @@ class Prajurit{
     }
 
     void display(){
-        System.out.println("Nama : " + nama);
+        System.out.println("\nNama : " + nama);
         System.out.println("Umur : " + umur);
         this.senjata.display();
         this.pelindung.display();
@@ -59,6 +59,7 @@ public class Main {
     public static void main(String[] args) {
         
         Prajurit prajurit1 = new Prajurit("Khoironi",22);
+        Prajurit prajurit2 = new Prajurit("Nadea",22);
 
         Senjata celurit = new Senjata("celurit",21);
         Senjata ketapel = new Senjata("ketapel",21);
@@ -68,7 +69,11 @@ public class Main {
 
         // prajurit1.display();
 
-        prajurit1.EquipSenjata(ketapel);
+        prajurit2.EquipSenjata(ketapel);
+        prajurit2.EquipPelindung(bajubesi);
+        prajurit2.display();
+
+        prajurit1.EquipSenjata(celurit);
         prajurit1.EquipPelindung(bajubesi);
         prajurit1.display();
 
