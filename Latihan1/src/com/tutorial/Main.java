@@ -97,10 +97,11 @@ public class Main {
         prajurit1.EquipPelindung(kertas);
         prajurit1.display();
 
+        System.out.println("\nPertempuran 1");
         prajurit2.serang(prajurit1);
         prajurit1.display();
 
-        System.out.println("\n");
+        System.out.println("\nPertempuran 2");
         prajurit1.serang(prajurit2);
         prajurit2.display();
 
