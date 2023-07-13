@@ -2,13 +2,15 @@ package com.tutorial;
 
 class Prajurit{
     String nama;
+    double kesehatan;
     int umur;
 
     Senjata senjata;
     Pelindung pelindung;
 
-    Prajurit(String nama, int umur){
+    Prajurit(String nama, double kesehatan, int umur){
         this.nama= nama;
+        this.kesehatan= kesehatan;
         this.umur= umur;
     }
     void EquipSenjata(Senjata senjata){
@@ -31,11 +33,13 @@ class Prajurit{
         }else{
             damage = 0;
         }
+        this.kesehatan -= damage;
         System.out.println("\n" + this.nama + " kerusakan : " + damage);
     }
 
     void display(){
         System.out.println("\nNama : " + nama);
+        System.out.println("Kesehatan : " + kesehatan);
         System.out.println("Umur : " + umur);
         this.senjata.display();
         this.pelindung.display();
@@ -74,8 +78,8 @@ class Pelindung{
 public class Main {
     public static void main(String[] args) {
         
-        Prajurit prajurit1 = new Prajurit("Khoironi",22);
-        Prajurit prajurit2 = new Prajurit("Nadea",22);
+        Prajurit prajurit1 = new Prajurit("Khoironi",100,22);
+        Prajurit prajurit2 = new Prajurit("Nadea",100,22);
 
         Senjata celurit = new Senjata("celurit",5);
         Senjata ketapel = new Senjata("ketapel",3);
@@ -94,8 +98,12 @@ public class Main {
         prajurit1.display();
 
         prajurit2.serang(prajurit1);
+        prajurit1.display();
+
         System.out.println("\n");
         prajurit1.serang(prajurit2);
+        prajurit2.display();
+
 
     }
 }
